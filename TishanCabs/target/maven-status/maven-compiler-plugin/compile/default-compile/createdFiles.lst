@@ -1,0 +1,4 @@
+com\ts\config\AppInitializer.class
+com\ts\controller\IndexController.class
+com\ts\config\AppConfig.class
+com\ts\config\HibernateConfiguration.class
