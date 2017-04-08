@@ -1,4 +1,12 @@
+com\ts\dao\aa.class
+com\ts\dao\AbstractDao.class
+com\ts\service\bb.class
+com\ts\model\user.class
+com\ts\config\HibernateConfiguration.class
+com\ts\dao\impl\UserDaoImpl.class
 com\ts\config\AppInitializer.class
 com\ts\controller\IndexController.class
+com\ts\dao\UserDao.class
 com\ts\config\AppConfig.class
-com\ts\config\HibernateConfiguration.class
+com\ts\service\impl\UserServiceImpl.class
+com\ts\service\UserService.class
