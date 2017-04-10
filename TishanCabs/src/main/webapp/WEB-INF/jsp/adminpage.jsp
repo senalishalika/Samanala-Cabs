@@ -1,13 +1,12 @@
 <%-- 
-    Document   : signup
-    Created on : 05-Apr-2017, 10:33:18
+    Document   : adminpage
+    Created on : 09-Apr-2017, 20:38:21
     Author     : mas shalika
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><!DOCTYPE html>
 <html>
     <head>
        <head>
@@ -50,8 +49,8 @@
 					<li><a href="about.html">About</a></li>
 					
 					<li><a href="contact.html">Contact</a></li>
-					<li><a class="btn" href="signup">SIGN UP</a></li>
-					<li><a class="btn" href="login">LOG IN</a></li>
+					
+					<li><a class="btn" href="index">LOG OUT</a></li>
 
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -61,9 +60,6 @@
 
 	<!-- Header -->
       
-	
-
-	<!-- container -->
 	<header id="head" class="secondary"></header>
 
 	<!-- container -->
@@ -73,65 +69,24 @@
 			<li><a href="index">Home</a></li>
 			
 		</ol>
-
-		<div class="row">
+<div class="row">
 			
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Registration</h1>
+					<h1 class="page-title">Choose What do you want from us</h1>
 				</header>
 				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Register a new account</h3>
-							<hr>
-
-
-                                    <form:form  action="signup" method="POST" modelAttribute="user"> 
-								<div class="top-margin">
-									<label>First Name</label>
-									<form:input type="text" name="fname" path="fname" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>Last Name</label>
-									<form:input type="text" name="lname" path="lname" class="form-control"/>
-								</div>
-                                                                <div class="top-margin">
-									<label>Tel No</label>
-									<form:input type="text" name="telno" path="telno" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>Email Address <span class="text-danger">*</span></label>
-									<form:input type="text" name="email" path="email" id="email" class="form-control"/>
-								</div>
-
-								<div class="row top-margin">
-									<div class="col-sm-6">
-										<label>Password <span class="text-danger">*</span></label>
-										<form:input type="text" name="password" path="password" class="form-control"/>
-									</div>
-									<div class="col-sm-6">
-										<label>Confirm Password <span class="text-danger">*</span></label>
-										<form:input type="text" name="cnfirm" path="cnfirm" class="form-control"/>
-									</div>
-								</div>
-
-								<hr>
-
-								<div class="row">
-									<div class="col-lg-8">
-										                    
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
-							      </form:form>  
-						</div>
-					</div>
-
+				<div class="col-md-12" style="height: 700px">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-4">
+                                   <a href="#">TAXI</a>   
+                           
+                                    </div>
+                                         <div class="col-md-1"></div>
+                                         <div class="col-md-4">
+                                              <a href="#">RENT</a> 
+                                         </div> 
 				</div>
 				
 			</article>
@@ -139,6 +94,9 @@
 
 		</div>
 	</div>	<!-- /container -->
+
+	<!-- 
+		<!-- /container -->
     <div class="footer2">
 			<div class="container">
 				<div class="row">

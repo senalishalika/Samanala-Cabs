@@ -41,7 +41,7 @@
 					
 					<li><a href="contact.html">Contact</a></li>
 					<li><a class="btn" href="signup">SIGN UP</a></li>
-					<li><a class="btn" href="signin.html">LOG IN</a></li>
+					<li><a class="btn" href="login">LOG IN</a></li>
 
 				</ul>
 			</div><!--/.nav-collapse -->

@@ -1,8 +1,9 @@
 <%-- 
-    Document   : signup
-    Created on : 05-Apr-2017, 10:33:18
+    Document   : login
+    Created on : 09-Apr-2017, 12:33:04
     Author     : mas shalika
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -79,43 +80,31 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Registration</h1>
+					<h1 class="page-title">Login</h1>
 				</header>
 				
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">Register a new account</h3>
+							<h3 class="thin text-center">Welcome</h3>
 							<hr>
 
 
-                                    <form:form  action="signup" method="POST" modelAttribute="user"> 
-								<div class="top-margin">
-									<label>First Name</label>
-									<form:input type="text" name="fname" path="fname" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>Last Name</label>
-									<form:input type="text" name="lname" path="lname" class="form-control"/>
-								</div>
-                                                                <div class="top-margin">
-									<label>Tel No</label>
-									<form:input type="text" name="telno" path="telno" class="form-control"/>
-								</div>
+                                                        <form:form  action="login" method="POST" modelAttribute="user"> 
+								
+								
+                                                            
 								<div class="top-margin">
 									<label>Email Address <span class="text-danger">*</span></label>
 									<form:input type="text" name="email" path="email" id="email" class="form-control"/>
 								</div>
 
-								<div class="row top-margin">
-									<div class="col-sm-6">
+								<div class="top-margin">
+									
 										<label>Password <span class="text-danger">*</span></label>
 										<form:input type="text" name="password" path="password" class="form-control"/>
-									</div>
-									<div class="col-sm-6">
-										<label>Confirm Password <span class="text-danger">*</span></label>
-										<form:input type="text" name="cnfirm" path="cnfirm" class="form-control"/>
-									</div>
+									
+									
 								</div>
 
 								<hr>
@@ -125,7 +114,7 @@
 										                    
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
+										<button class="btn btn-action" type="submit">Login</button>
 									</div>
 								</div>
 							      </form:form>  
@@ -138,7 +127,7 @@
 			<!-- /Article -->
 
 		</div>
-	</div>	<!-- /container -->
+</div>	<!-- /container -->
     <div class="footer2">
 			<div class="container">
 				<div class="row">

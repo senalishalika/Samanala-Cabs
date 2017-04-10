@@ -33,8 +33,16 @@ public class user implements Serializable{
     private String telno;
     private String email;
     private String password;
-    private String cnfirm;
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+    private String cnfirm;
+    private String role="user";
     public Integer getID() {
         return ID;
     }

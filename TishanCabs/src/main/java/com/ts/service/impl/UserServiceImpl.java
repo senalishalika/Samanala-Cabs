@@ -26,4 +26,19 @@ public class UserServiceImpl implements UserService{
     public void adduser(user user1){
         userdao.adduser(user1);
     }
+    
+     /*@Override
+     public String search(String email){
+         String pass=userdao.search(email);
+         return pass;
+     }*/
+     @Override
+      public boolean checkLogin(String userName, String userPassword){
+              
+              return userdao.checkLogin(userName, userPassword);
+       }
+       @Override
+      public String getRole(String userName){
+          return userdao.getRole(userName);
+      }
 }

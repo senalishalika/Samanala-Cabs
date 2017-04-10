@@ -13,4 +13,7 @@ import com.ts.model.user;
  */
 public interface UserService {
     void adduser( user user1);
+    //String search(String email);
+    boolean checkLogin(String userName, String userPassword);
+    String getRole(String userName);
 }
