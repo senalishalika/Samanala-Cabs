@@ -41,4 +41,12 @@ public class UserServiceImpl implements UserService{
       public String getRole(String userName){
           return userdao.getRole(userName);
       }
+      @Override
+      public user getdetails(String email){
+          return userdao.getdetails(email);
+      }
+       @Override
+      public void changeSetting(user user1,String email){
+          userdao.changeSetting(user1,email);
+      } 
 }

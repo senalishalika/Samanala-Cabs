@@ -5,6 +5,7 @@
  */
 package com.ts.controller;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import com.ts.model.user;
 import com.ts.service.UserService;
 import static javassist.CtMethod.ConstParameter.string;
@@ -18,12 +19,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
  *
  * @author mas shalika
  */
 @Controller
+
 public class IndexController {
     
     @Autowired
@@ -62,12 +65,16 @@ public class IndexController {
     }*/
 
    @RequestMapping(value={"/login"},method=RequestMethod.POST)
-  public String login(@Valid user user1,BindingResult result,ModelMap model){
+  public String login(@Valid user user1,BindingResult result,ModelMap model,HttpSession session,HttpServletRequest request){
+      String email = request.getParameter("email");
+      session.setAttribute("email", email);
+     // String k=session.getAttribute("username").toString();
+      
      boolean userExists = userService.checkLogin(user1.getEmail(),
                 user1.getPassword());
      String role=userService.getRole(user1.getEmail());
-      System.out.println(role);
-      System.out.println(role.length());
+     // System.out.println(role);
+     // System.out.println(role.length());
      if(userExists && ("admin".equals(role))){
          System.out.println(role);
          
@@ -81,5 +88,21 @@ public class IndexController {
      }
   }
   
+   @RequestMapping(value = {"/adminSetting"}, method = RequestMethod.GET)
+    public String getadminSetting(HttpServletRequest request,HttpSession session,ModelMap model) {
+          String email=session.getAttribute("email").toString(); 
+          
+          user user1=userService.getdetails(email);
+                model.addAttribute("user",user1);
+
+       return "adminSetting";
+    }
+  @RequestMapping(value={"/adminSetting"},method=RequestMethod.POST)
+  public String changeSetting(@Valid user user1,BindingResult result,ModelMap model,HttpSession session){
+      String email=session.getAttribute("email").toString(); 
+
+      userService.changeSetting(user1,email);
+      return "adminpage";
+  }
 
 }

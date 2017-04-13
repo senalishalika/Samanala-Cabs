@@ -16,4 +16,6 @@ public interface UserService {
     //String search(String email);
     boolean checkLogin(String userName, String userPassword);
     String getRole(String userName);
+    user getdetails(String email);
+    void changeSetting(user user1,String email);
 }

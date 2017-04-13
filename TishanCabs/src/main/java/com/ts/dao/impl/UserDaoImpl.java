@@ -53,6 +53,7 @@ String pass = query.toString();
               return sessionFactory.openSession();
        }
 */
+     @Override
        public boolean checkLogin(String userName, String userPassword){
 			System.out.println("In Check login");
 			Session session = sessionFactory.openSession();
@@ -72,6 +73,7 @@ String pass = query.toString();
 			return userFound;              
        }
        
+     @Override
        public String getRole(String userName){
            Session session = sessionFactory.openSession();
            String role;
@@ -88,4 +90,45 @@ String pass = query.toString();
 			return role;  
            
        }
+       
+     @Override
+    public user getdetails(String email){
+       Session session = sessionFactory.openSession();
+			
+			//Query using Hibernate Query Language
+			String SQL_QUERY =" from user as o where o.email=?";
+			Query query = session.createQuery(SQL_QUERY);
+			query.setParameter(0,email);
+			
+			user emp = (user) query.uniqueResult();
+
+			session.close();
+			return emp;   
+    }
+    @Override
+    public void changeSetting(user user1,String email){
+        
+               Session session = sessionFactory.openSession();
+                        System.out.println(email);
+                        System.out.println(user1.getFname());
+			//Query using Hibernate Query Language
+			Query query = session.createQuery("update user set fname = :fName, lname = :lName,email = :Email,password = :pWord,telno = :tel" +
+    				" where email = :Email");
+                        query.setParameter("fName", user1.getFname());
+                        query.setParameter("lName", user1.getLname());
+                        query.setParameter("pWord", user1.getPassword());
+                        query.setParameter("tel", user1.getTelno());
+
+                        query.setParameter("Email", email);
+                        
+                        int result = query.executeUpdate();
+			
+                        
+			session.close();
+		
+           
+            
+                
+
+    }
 }

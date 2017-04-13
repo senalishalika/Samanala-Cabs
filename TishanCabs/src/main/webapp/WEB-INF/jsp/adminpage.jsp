@@ -46,12 +46,20 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					
-					<li><a href="about.html">About</a></li>
 					
-					<li><a href="contact.html">Contact</a></li>
-					
-					<li><a class="btn" href="index">LOG OUT</a></li>
+				<li class="active"><a href="#">Home</a></li>
+					<li><a href="about.html">Requests</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="addVehicle">Add Vehicle</a></li>
+							<li><a href="sidebar-right.html">Available Vehicle</a></li>
+                                                        <li><a href="sidebar-right.html">Change Vehicle</a></li>
 
+						</ul>
+					</li>
+					<li><a href="adminSetting">Settings</a></li>
+					<li><a class="btn" href="index">LOG OUT</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -65,33 +73,10 @@
 	<!-- container -->
 	<div class="container">
 
-		<ol class="breadcrumb">
-			<li><a href="index">Home</a></li>
-			
-		</ol>
-<div class="row">
-			
-			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Choose What do you want from us</h1>
-				</header>
-				
-				<div class="col-md-12" style="height: 700px">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4">
-                                   <a href="#">TAXI</a>   
-                           
-                                    </div>
-                                         <div class="col-md-1"></div>
-                                         <div class="col-md-4">
-                                              <a href="#">RENT</a> 
-                                         </div> 
-				</div>
-				
-			</article>
-			<!-- /Article -->
-
+		
+<div class="row" style="height:500px">
+	This is home page	
+        <c:out value="${email}"></c:out>
 		</div>
 	</div>	<!-- /container -->
 
