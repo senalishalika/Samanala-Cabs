@@ -74,13 +74,72 @@
 	<div class="container">
 
 		
-<div class="row" style="height:500px">
-	
+<ol class="breadcrumb">
+			<li><a href="index">Home</a></li>
+			
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Add New Vehicle</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Enter Vehicle Details</h3>
+							<hr>
+
+
+                                    <form:form  action="addVehicle" method="POST" modelAttribute="Vehicle" enctype="multipart/form-data"> 
+								<div class="top-margin">
+									<label>Vehicle No</label>
+									<form:input type="text" name="vehicleNo" path="vehicleNo" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<label>Vehicle Category</label>
+                                                                         <form:select path="category" class="form-control">
+                                                                            <form:options items="${value}" />
+                                                                            </form:select>
+
+									
+								</div>
+                                                                <div class="top-margin">
+									<label>purpose</label>
+                                                                       <form:input type="text" name="purpose" path="purpose" class="form-control"/>
+
+								</div>
+								<div class="top-margin">
+									<label>Image</label>
+									<input path="image" id="image" type="file" name="file" />
+								</div>
+
+							
+
+								<hr>
+
+								<div class="row">
+									<div class="col-lg-8">
+										                    
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">Add</button>
+									</div>
+								</div>
+							      </form:form>  
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
 		</div>
 	</div>	<!-- /container -->
-
-	<!-- 
-		<!-- /container -->
     <div class="footer2">
 			<div class="container">
 				<div class="row">
