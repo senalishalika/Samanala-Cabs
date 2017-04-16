@@ -51,13 +51,24 @@ public class VehicleController {
     
     
     @RequestMapping(value = {"/addVehicle"}, method = RequestMethod.POST)
-    public String addVehicle(@Valid Vehicle vehicle,BindingResult result,ModelMap model,@RequestParam("file") MultipartFile file,HttpServletRequest request) {
+    public String addVehicle(@Valid Vehicle vehicle,BindingResult result,ModelMap model,@RequestParam("file") MultipartFile file,HttpServletRequest request) throws IOException {
              String filename=file.getOriginalFilename();
-              
+               byte[] bytes = file.getBytes();
+               String a=request.getRealPath("/");
+               System.out.println(a); 
+
+               File file2=new File(a,"images"); 
+               File temp=new File(file2,filename); 
+               System.out.println("Path : "+temp); 
+
+                try (FileOutputStream fos = new FileOutputStream(temp)) {
+            fos.write(bytes);
+        } 
+
                 vehicle.setImage(filename);
              
                 vehicle2Service.addVehicle(vehicle);   
-                return "addVehicle";
+                return "adminpage";
     }
 
 }

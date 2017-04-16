@@ -32,6 +32,22 @@
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+        <script>
+     function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+        </script>
 </head>
    
    <body class="home">
@@ -109,12 +125,13 @@
 								</div>
                                                                 <div class="top-margin">
 									<label>purpose</label>
-                                                                       <form:input type="text" name="purpose" path="purpose" class="form-control"/>
-
+                                                                        <form:radiobutton path="purpose" value="For Taxi" onclick="submitForm()"/>For Taxi
+                                                                        <form:radiobutton path="purpose" value="For Rent" onclick="submitForm()"/>For Rent
 								</div>
-								<div class="top-margin">
+								<div>
 									<label>Image</label>
-									<input path="image" id="image" type="file" name="file" />
+									<input path="image" onchange="readURL(this);" id="imgInp" type="file" name="file" />
+                                                                         <img id="blah" src="#" alt="your image" style="height: 50px; width: 50px;"/>
 								</div>
 
 							
